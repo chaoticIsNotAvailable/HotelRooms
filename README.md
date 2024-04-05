@@ -1,3 +1,5 @@
 # HotelRooms
 My own personal project
-Gonna update the file as soon as i add smth here
+An app to make a reservation for a room in hotel!
+Gonna add: Sign in system, Menu with rooms and floors.
+
