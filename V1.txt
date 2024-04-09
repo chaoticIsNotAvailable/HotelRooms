@@ -1,0 +1,33 @@
+import flet as ft
+import time
+
+def main(page: ft.Page):
+    t = ft.Text()
+    page.add(t)  # it's a shortcut for page.controls.append(t) and then page.update()
+
+    for i in range(2):
+        t.value = "Loading..."
+        page.update()
+        time.sleep(1)
+    t.value = "Done!"
+    page.update()
+
+    def button_clicked(e):
+        t.value = f"Textboxes values are:  '{tb1.value}', '{tb2.value}', '{tb3.value}'."
+        page.update()
+
+    t = ft.Text()
+    tb1 = ft.TextField(label="Name")
+    tb2 = ft.TextField(label="Code number")
+    tb3 = ft.TextField(label="Password")
+    b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
+    page.add(tb1, tb2, tb3, b, t)
+    str(tb2)
+    str(tb3)
+    if  tb2 == '3472' and tb3 == '8820018':
+        page.add('Success!')
+    else:
+        page.add('Wrong password, or/and code!')
+
+
+ft.app(target=main, view=ft.AppView.WEB_BROWSER)
