@@ -22,12 +22,5 @@ def main(page: ft.Page):
     tb3 = ft.TextField(label="Password")
     b = ft.ElevatedButton(text="Submit", on_click=button_clicked)
     page.add(tb1, tb2, tb3, b, t)
-    str(tb2)
-    str(tb3)
-    if  tb2 == '3472' and tb3 == '8820018':
-        page.add('Success!')
-    else:
-        page.add('Wrong password, or/and code!')
-
-
+    
 ft.app(target=main, view=ft.AppView.WEB_BROWSER)
