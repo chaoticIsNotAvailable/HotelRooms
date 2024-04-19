@@ -1,0 +1,34 @@
+import flet as ft    #importing stuff
+import time
+def main(page: ft.Page):
+    t = ft.Text()            #adding text.
+    page.add(t)
+
+
+    for i in range(2):
+        t.value = "Loading..."
+        page.update()
+        time.sleep(1)               #Fake loading >:))
+    t.value = "Done!"
+    page.update()
+
+    def button_clicked(e):
+        t.value = f"You are signed in as:  '{Login.value}'."
+        page.update()             #This stuff happens when the button is being clicked, bassicly confirmation of login, it will send all this stuff to the next part of code shortly after.
+        time.sleep(5)
+
+    t = ft.Text()
+    Login = ft.TextField(label="Name")
+    Password = ft.TextField(label="Password")              #Giving variables some meaning, like, making them a button??
+    butt = ft.ElevatedButton(text="Submit", on_click=button_clicked)
+    page.add(
+        ft.Row(controls=[
+            ft.Text("Sign in")             #Its just a lil text
+
+        ])
+    )
+    page.add(Login, Password, butt)           #working with the variables i commentated earlier...
+
+
+ft.app(target=main)
+#im so fucking done
